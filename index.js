@@ -15,6 +15,3 @@ cron.schedule('0 '+parseInt(time[1])+' '+parseInt(time[0])+' */'+config.backup_p
 });
 
 logger.debug('Backup service started.');
-
-// test
-worker.doBackup();
