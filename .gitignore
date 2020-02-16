@@ -47,3 +47,4 @@ config.js
 config.json
 logs
 node_modules
+temp
