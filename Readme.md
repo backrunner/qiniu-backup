@@ -6,12 +6,17 @@ qiniu-backup is a tool using node-cron and the SDK from Qiniu for automatically 
 
 ## How to use
 
-Run this command line when Git is installed:
+Run the following line when Git is installed:
 ```
 git clone https://github.com/backrunner/qiniu-backup.git
 ```
 
 Please ensure your environment has installed Node.js.
+
+Run the following line to install dependencies:
+```
+npm install
+```
 
 In qiniu-backup folder, copy **config.tmpl.js** to **config.js**, then filling it.
 
