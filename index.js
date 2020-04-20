@@ -23,13 +23,15 @@ if (hour < 0 || hour >= 24) {
     logger.error('backup_per_day must be a integer greater than 0.');
     process.exit();
 }
-if (file_type < 0 || file_type > 2) {
+if (config.file_type < 0 || config.file_type > 2) {
     logger.error('file_type must be an integer in 0 - 2.');
     process.exit();
 }
 
 // start cron
-cron.schedule(`0 ${minute} ${hour} */${config.backup_per_day} * *`, ()=>{
+const cron_setting = `0 ${minute} ${hour} */${config.backup_per_day} * *`;
+logger.debug(`cron setting: ${cron_setting}`);
+cron.schedule(cron_setting, ()=>{
     logger.debug('Starting a backup task.');
     worker.doBackup();
 });
