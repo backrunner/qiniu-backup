@@ -20,7 +20,7 @@ const config = {
             // create folder by month
             // only enabled when prefix is true
             // like: /[taskname]/202001/[timestamp].zip
-            month_foler: true,
+            month_folder: true,
             // folders need to be pack up
             folders: [
                 ''

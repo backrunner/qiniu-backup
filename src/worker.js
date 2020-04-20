@@ -26,7 +26,7 @@ const worker = {
             let zipKey = ret_zip.zipName;
             // replace task name
             if (task.prefix) {
-                if (task.month_foler) {
+                if (task.month_folder) {
                     zipKey = `${task.name}/${new moment().format('YYYYMM')}/${zipKey.replace(`${task.name}_`, '')}`;
                 } else {
                     zipKey = `${task.name}/${zipKey.replace(`${task.name}_`, '')}`;

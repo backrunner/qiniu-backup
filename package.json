@@ -1,6 +1,6 @@
 {
   "name": "qiniu-backup",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Auto backup files to qiniu.",
   "main": "index.js",
   "scripts": {

@@ -32,7 +32,7 @@ const qiniuUtil = {
                 if (respInfo.statusCode == 200) {
                     logger.info('Backup file ['+file+'] is uploaded. File key: '+ file_key);
                     // set file to archive
-                    if (file_type !== 0) {
+                    if (file_type && file_type !== 0) {
                         bucketManager.changeType(qiniu_bucket, file_key, file_type, (err, respBody, respInfo) => {
                             if (err) {
                                 logger.error('Change file ['+file_key+'] to archive.');
