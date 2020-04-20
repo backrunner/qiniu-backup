@@ -1,12 +1,14 @@
 {
   "name": "qiniu-backup",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Auto backup files to qiniu.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node test.js"
   },
   "author": "BackRunner",
+  "repository": "https://github.com/backrunner/qiniu-backup.git",
   "license": "MIT",
   "dependencies": {
     "archiver": "^3.1.1",

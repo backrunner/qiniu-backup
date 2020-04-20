@@ -1,11 +1,11 @@
-const { qiniu_key, qiniu_secret, qiniu_bucket } = require('../../config');
+const { qiniu_key, qiniu_secret, qiniu_zone, qiniu_bucket, file_type } = require('../../config');
 const qiniu = require('qiniu');
 const logger = require('../logger');
 
 // Set qiniu config and uploader
 const mac = new qiniu.auth.digest.Mac(qiniu_key, qiniu_secret);
 var qiniuConfig = new qiniu.conf.Config();
-qiniuConfig.zone = 	qiniu.zone.Zone_z2;
+qiniuConfig.zone = 	qiniu.zone[qiniu_zone];
 const formUploader = new qiniu.form_up.FormUploader(qiniuConfig);
 const bucketManager = new qiniu.rs.BucketManager(mac, qiniuConfig);
 
@@ -32,7 +32,7 @@ const qiniuUtil = {
                 if (respInfo.statusCode == 200) {
                     logger.info('Backup file ['+file+'] is uploaded. File key: '+ file_key);
                     // set file to archive
-                    bucketManager.changeType(qiniu_bucket, file_key, 2, (err, respBody, respInfo) => {
+                    bucketManager.changeType(qiniu_bucket, file_key, file_type, (err, respBody, respInfo) => {
                         if (err) {
                             logger.error('Change file ['+file_key+'] to archive.');
                             return;
