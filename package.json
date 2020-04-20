@@ -11,8 +11,8 @@
   "repository": "https://github.com/backrunner/qiniu-backup.git",
   "license": "MIT",
   "dependencies": {
-    "archiver": "^3.1.1",
-    "log4js": "^6.1.2",
+    "archiver": "^4.0.1",
+    "log4js": "^6.2.1",
     "moment": "^2.24.0",
     "node-cron": "^2.0.3",
     "qiniu": "^7.3.0"
